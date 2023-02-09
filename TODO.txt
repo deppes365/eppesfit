@@ -1,0 +1,6 @@
+1. [ ] Create User Action
+    - [ ] Create Firebase Auth User
+    - [ ] Save info from firebase to MongoDB
+
+2. [ ] Delete User Action
+    
