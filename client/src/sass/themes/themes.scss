@@ -1,18 +1,63 @@
-.light {
+.App.light {
+    transition: all 0.3s ease;
+
     h1, h2, h3, h4, h5, p {
-        color: #fff;
+        color: $dark-100;
+        transition: 0.3s ease;
     }
 
     .bg-primary {
-        background-color: #fff;
+        background-color: $light-100;
+        transition: 0.3s ease;
+
+        &.rgba {
+            background-color: $light-100A7;
+        }
     }
 
     .bg-secondary {
-        background-color: #dfdfdf;
+        background-color: $light-200;
+        transition: 0.3s ease;
 
+        &.rgba {
+            background-color: $light-200A7;
+        }
+    }
+
+    .icon {
+        color: $dark-100;
+        transition: 0.3s ease;
     }
 }
 
-.dark {
+.App.dark {
+    
 
+    h1, h2, h3, h4, h5, p {
+        color: $light-100;
+        transition: 0.3s ease;
+    }
+
+    .bg-primary {
+        background-color: $dark-100;
+        transition: 0.3s ease;
+
+        .rgba {
+            background-color: $dark-100A7;
+        }
+    }
+
+    .bg-secondary {
+        background-color: $dark-200;
+        transition: 0.3s ease;
+
+        &.rgba {
+            background-color: $dark-200A7;
+        }
+    }
+
+    .icon {
+        color: $light-100;
+        transition: 0.3s ease;
+    }
 }

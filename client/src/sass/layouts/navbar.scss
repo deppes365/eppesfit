@@ -1,0 +1,35 @@
+$navBarHeight: 3rem;
+
+.navBar {
+	width: 100%;
+	height: $navBarHeight;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+
+	h1 {
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+
+        span {
+            color: $accent;
+        }
+    }
+
+    .icon {
+        font-size: 1.5rem;
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+
+        &.active {
+            transform: translateY(-50%) rotate(90deg);
+        }
+    }
+}

@@ -1,0 +1,13 @@
+$bottomBarHeight: 5rem;
+
+.bottomBar {
+    width: 100%;
+    height: $bottomBarHeight;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+
+    box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.5);
+}

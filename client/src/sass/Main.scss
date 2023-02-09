@@ -4,16 +4,26 @@
 // Breakpoints
 @import './breakpoints.scss';
 
-// Layouts
-@import 'layouts/navbar.scss';
-
 // Base 
 @import 'base/colors.scss';
 
 // Themes
 @import 'themes/themes.scss';
 
+// Layouts
+@import 'layouts/navbar.scss';
+@import 'layouts/bottomBar.scss';
+@import 'layouts/settings.scss';
+
+
+
 .App {
     font-family: 'Oswald', sans-serif;
     position: relative;
+
+    .main.bg-primary {
+        width: 100%;
+        height: auto;
+        min-height: 100dvh;
+    }
 }
