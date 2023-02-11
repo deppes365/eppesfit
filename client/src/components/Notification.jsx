@@ -19,7 +19,7 @@ const Notification = () => {
 
 	return (
 		<div
-			className={`notification bg-secondary ${showNotification ? 'show' : ''}`}
+			className={`notification bg-secondary ${showNotification && message ? 'show' : ''}`}
 		>
 			<h4>{message}</h4>
 			<div

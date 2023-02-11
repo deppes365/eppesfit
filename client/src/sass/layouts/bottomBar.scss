@@ -23,6 +23,7 @@ $bottomBarHeight: 5rem;
 		padding: 0.5rem;
 		border-radius: 17.5px;
 		transition: 0.3s ease;
+		
 
 		&.active {
 			background: #272727;
@@ -30,11 +31,13 @@ $bottomBarHeight: 5rem;
 
 			.icon {
 				color: $accent;
+				transform: scale(1);
 			}
 		}
 	}
 
 	.icon {
 		font-size: 2rem;
+		transform: scale(0.9);
 	}
 }

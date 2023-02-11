@@ -19,10 +19,19 @@
 	}
 }
 
+form {
+	width: 100%;
+	position: relative;
+	padding: 2rem 0;
+}
+
 .editBtn {
 	cursor: pointer;
 	border: 0;
 	background-color: transparent;
+	position: absolute;
+	top: 0;
+	right: 5.5rem;
 
 	p {
 		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
