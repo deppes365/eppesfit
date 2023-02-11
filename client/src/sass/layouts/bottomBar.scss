@@ -1,13 +1,40 @@
 $bottomBarHeight: 5rem;
 
 .bottomBar {
-    width: 100%;
-    height: $bottomBarHeight;
+	width: 100%;
+	height: $bottomBarHeight;
+	padding: 0 1rem;
 
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 20;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 
-    box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.5);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 20;
+
+	box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.5);
+
+	a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0.5rem;
+		border-radius: 17.5px;
+		transition: 0.3s ease;
+
+		&.active {
+			background: #272727;
+			box-shadow: 8px 8px 14px #212121, -8px -8px 14px #2d2d2d;
+
+			.icon {
+				color: $accent;
+			}
+		}
+	}
+
+	.icon {
+		font-size: 2rem;
+	}
 }

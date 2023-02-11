@@ -4,7 +4,7 @@
 // Breakpoints
 @import './breakpoints.scss';
 
-// Base 
+// Base
 @import 'base/colors.scss';
 
 // Themes
@@ -15,15 +15,49 @@
 @import 'layouts/bottomBar.scss';
 @import 'layouts/settings.scss';
 
+// Pages
+@import 'pages/profile.scss';
 
+// Components
+@import 'components/notification.scss';
 
 .App {
-    font-family: 'Oswald', sans-serif;
-    position: relative;
+	font-family: 'Oswald', sans-serif;
+	position: relative;
 
-    .main.bg-primary {
-        width: 100%;
-        height: auto;
-        min-height: 100dvh;
+	.main.bg-primary {
+		width: 100%;
+		height: auto;
+		min-height: 100dvh;
+	}
+}
+
+.page {
+	width: 100%;
+	min-height: calc(100dvh - $navBarHeight - $bottomBarHeight);
+	position: relative;
+	top: $navBarHeight;
+	left: 0;
+	padding: 0.5rem 1rem;
+    opacity: 0;
+    animation: pageFadeIn 0.3s forwards;
+}
+
+.pageTitle {
+	color: $accent !important;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+	letter-spacing: 0.025em;
+	text-align: left;
+	padding: 0 0.5rem;
+	border-radius: 30px;
+    width: 100%;
+}
+
+@keyframes pageFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

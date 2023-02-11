@@ -6,6 +6,7 @@
 	top: $navBarHeight;
 	left: 0;
 	z-index: 19;
+	backdrop-filter: blur(3px);
 
 	text-align: center;
 	padding: 2rem 5rem;
@@ -13,7 +14,7 @@
 
 	transform: translateX(-100%);
 	opacity: 0;
-	filter: blur(5px);
+	
 
 	&.active {
 		transform: translateX(0);

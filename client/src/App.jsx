@@ -16,15 +16,20 @@ import Navbar from './layouts/Navbar';
 import Settings from './layouts/Settings';
 
 //Pages
-import Login from './pages/Login';
-import BottomBar from './layouts/bottomBar';
-import Workout from './pages/Workout';
+import Login from './pages/Login.jsx';
+import BottomBar from './layouts/bottomBar.jsx';
+import Workout from './pages/Workout.jsx';
+import Profile from './pages/Profile';
+
+// Components
+import Notification from './components/Notification';
 
 function App() {
 	const [loggedIn, setLoggedIn] = useState(true);
 	const [showSettings, setShowSettings] = useState(false);
 
 	const { darkTheme } = useSelector(state => state.app);
+	const {showNotification} = useSelector(state => state.notification)
 
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
@@ -38,7 +43,13 @@ function App() {
 	return (
 		<div className={`App ${darkTheme ? 'dark' : 'light'}`}>
 			<div className="main bg-primary">
-				{loggedIn && <Navbar showSettings={showSettings} setShowSettings={setShowSettings} />}
+				<Notification />
+				{loggedIn && (
+					<Navbar
+						showSettings={showSettings}
+						setShowSettings={setShowSettings}
+					/>
+				)}
 				{loggedIn && <BottomBar />}
 				<Settings
 					showSettings={showSettings}
@@ -47,7 +58,8 @@ function App() {
 
 				<Routes>
 					<Route path="/login" element={<Login />} />
-          <Route path='/' element={<Workout />} />
+					<Route path="/" element={<Workout />} />
+					<Route path="/profile" element={<Profile />} />
 				</Routes>
 			</div>
 		</div>
