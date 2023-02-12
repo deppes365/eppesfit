@@ -23,21 +23,21 @@ import Profile from './pages/Profile';
 
 // Components
 import Notification from './components/Notification';
+import Signup from './pages/Signup';
 
 function App() {
-	const [loggedIn, setLoggedIn] = useState(true);
 	const [showSettings, setShowSettings] = useState(false);
 
-	const { darkTheme } = useSelector(state => state.app);
-	const {showNotification} = useSelector(state => state.notification)
+	const { darkTheme, loggedIn } = useSelector(state => state.app);
+	const { showNotification } = useSelector(state => state.notification);
 
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		if (!loggedIn) {
-			navigate('/login');
-		}
+		// if (!loggedIn) {
+		// 	navigate('/login');
+		// }
 	}, [loggedIn, navigate]);
 
 	return (
@@ -58,6 +58,7 @@ function App() {
 
 				<Routes>
 					<Route path="/login" element={<Login />} />
+					<Route path="/sign-up" element={<Signup />} />
 					<Route path="/" element={<Workout />} />
 					<Route path="/profile" element={<Profile />} />
 				</Routes>
