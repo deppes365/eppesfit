@@ -17,9 +17,11 @@
 
 // Pages
 @import 'pages/profile.scss';
+@import 'pages/workout.scss';
 
 // Components
 @import 'components/notification.scss';
+@import 'components/routinesModal.scss';
 
 .App {
 	font-family: 'Oswald', sans-serif;

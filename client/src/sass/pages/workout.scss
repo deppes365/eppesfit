@@ -1,0 +1,41 @@
+#workout {
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+
+   .pageTitle {
+        margin-bottom: 2rem;
+   }
+
+    .workoutContainer {
+        height: 300px;
+        width: 300px;
+        border: 5px solid $accent;
+        border-radius: 50%;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 1rem;
+    }
+
+    button {
+        background-color: $accent;
+        color: $light-100;
+        padding: 0.25rem 1rem;
+        border-radius: 20px;
+        border: 0;
+        outline: none;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        &:hover {
+            transform: scale(0.9);
+        }
+    }
+
+}
