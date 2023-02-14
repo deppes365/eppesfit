@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
 	darkTheme: false,
-    loggedIn: true
+    loggedIn: true,
+    imperialSystem: true
 };
 
 export const appSlice = createSlice({
@@ -11,10 +12,13 @@ export const appSlice = createSlice({
 	reducers: {
         setDarkTheme: (state, action) => {
             state.darkTheme = !state.darkTheme
+        },
+        setMeasurementSystem: (state) => {
+            state.imperialSystem = !state.imperialSystem
         }
     },
 });
 
-export const { setDarkTheme } = appSlice.actions;
+export const { setDarkTheme, setMeasurementSystem } = appSlice.actions;
 
 export default appSlice.reducer;
