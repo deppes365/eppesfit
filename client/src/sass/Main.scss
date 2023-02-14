@@ -19,10 +19,13 @@
 @import 'pages/profile.scss';
 @import 'pages/workout.scss';
 @import 'pages/authPage.scss';
+@import 'pages/weighIn.scss';
 
 // Components
 @import 'components/notification.scss';
 @import 'components/routinesModal.scss';
+@import 'components/chart.scss';
+@import 'components/weightInModal.scss';
 
 .App {
 	font-family: 'Oswald', sans-serif;
@@ -54,6 +57,22 @@
 	padding: 0 0.5rem;
 	border-radius: 30px;
     width: 100%;
+}
+
+button {
+	background-color: $accent;
+	color: $light-100;
+	padding: 0.25rem 1rem;
+	border-radius: 20px;
+	border: 0;
+	outline: none;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	transition: 0.3s ease;
+
+	&:hover {
+		transform: scale(0.9);
+	}
 }
 
 @keyframes pageFadeIn {

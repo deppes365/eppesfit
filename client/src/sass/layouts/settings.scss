@@ -53,9 +53,9 @@
 	}
 	.theme-switch {
 		display: inline-block;
-		height: 34px;
+		height: 26px;
 		position: relative;
-		width: 60px;
+		width: 50px;
 	}
 
 	.theme-switch input {
@@ -75,13 +75,13 @@
 
 	.slider:before {
 		background-color: $light-100;
-		bottom: 4px;
+		bottom: 2px;
 		content: '';
-		height: 26px;
-		left: 4px;
+		height: 22px;
+		left: 2px;
 		position: absolute;
 		transition: 0.4s;
-		width: 26px;
+		width: 22px;
         
 	}
 
@@ -90,7 +90,7 @@
 	}
 
 	input:checked + .slider:before {
-		transform: translateX(26px);
+		transform: translateX(24px);
 	}
 
 	.slider.round {

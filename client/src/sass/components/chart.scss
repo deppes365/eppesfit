@@ -1,0 +1,17 @@
+.chartContainer {
+    width: 100%;
+    height: auto;
+    min-height: 30dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+
+    #chartFilter {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid $dark-200;
+        color: $dark-200;
+    }
+}

@@ -24,6 +24,9 @@ import Profile from './pages/Profile';
 // Components
 import Notification from './components/Notification';
 import Signup from './pages/Signup';
+import WeighIn from './pages/WeighIn';
+import History from './pages/History';
+import Routines from './pages/Routines';
 
 function App() {
 	const [showSettings, setShowSettings] = useState(false);
@@ -61,6 +64,9 @@ function App() {
 					<Route path="/sign-up" element={<Signup />} />
 					<Route path="/" element={<Workout />} />
 					<Route path="/profile" element={<Profile />} />
+					<Route path="/weigh-in" element={<WeighIn />} />
+					<Route path="/history" element={<History />} />
+					<Route path="/routines" element={<Routines />} />
 				</Routes>
 			</div>
 		</div>
