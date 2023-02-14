@@ -11,6 +11,7 @@ export const notificationSlice = createSlice({
 	initialState,
 	reducers: {
         notify: (state, action) => {
+            state.showNotification = false
             state.message = action.payload.message
             state.error = action.payload.error
             state.showNotification = true

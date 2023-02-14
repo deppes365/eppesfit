@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
 
 import { setDarkTheme, setMeasurementSystem } from '../redux/app/appSlice';
+import { notify } from '../redux/notification/notificationSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 function Settings({ showSettings, setShowSettings }) {
 	const dispatch = useDispatch();
 	const { darkTheme, imperialSystem } = useSelector(state => state.app);
+
+	const handleMeasurementSystem = () => {
+		dispatch(
+			notify({
+				message: `Measurement system changed to ${
+					!imperialSystem ? 'Imperial' : 'Metric'
+				} system.`,
+				error: false,
+			})
+		);
+
+		dispatch(setMeasurementSystem());
+	};
 
 	return (
 		<div
@@ -36,14 +50,12 @@ function Settings({ showSettings, setShowSettings }) {
 				<h3>Measurement System</h3>
 
 				<div className="theme-switch-wrapper">
-					<label className="theme-switch" htmlFor="measurmentSystem">
+					<label className="theme-switch" htmlFor="measurementSystem">
 						<input
 							type="checkbox"
 							id="measurementSystem"
 							checked={imperialSystem}
-							onChange={() => {
-								dispatch(setMeasurementSystem());
-							}}
+							onChange={() => handleMeasurementSystem()}
 						/>
 						<div className="slider round"></div>
 					</label>

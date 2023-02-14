@@ -18,9 +18,9 @@ const LineChart = ({ chartData }) => {
 		<div className="chartContainer">
 			<Line data={chartData} options={options}/>
             <select name="chartFilter" id="chartFilter">
-                <option value="monthly"><p>Monthly</p></option>
-                <option value="weekly"><p>Weekly</p></option>
-                <option value="thisWeek" selected><p>This Week</p></option>
+                <option value="monthly">Monthly</option>
+                <option value="weekly">Weekly</option>
+                <option value="thisWeek" defaultValue={true}>This Week</option>
             </select>
 		</div>
 	);

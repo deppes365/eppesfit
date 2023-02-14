@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+
 const initialState = {
 	darkTheme: false,
     loggedIn: true,
@@ -10,11 +11,12 @@ export const appSlice = createSlice({
 	name: 'app',
 	initialState,
 	reducers: {
-        setDarkTheme: (state, action) => {
+        setDarkTheme: (state) => {
             state.darkTheme = !state.darkTheme
         },
         setMeasurementSystem: (state) => {
             state.imperialSystem = !state.imperialSystem
+            
         }
     },
 });
