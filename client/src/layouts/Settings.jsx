@@ -1,13 +1,23 @@
-import React, { useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
 
-import { setDarkTheme, setMeasurementSystem } from '../redux/app/appSlice';
+import {
+	resetAppState,
+	setDarkTheme,
+	setMeasurementSystem,
+	setShowSettings,
+} from '../redux/app/appSlice';
 import { notify } from '../redux/notification/notificationSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { getAuth, signOut } from 'firebase/auth';
+import { app } from '../auth/firebase.config';
+import { resetUserState } from '../redux/user/userSlice';
 
-function Settings({ showSettings, setShowSettings }) {
+function Settings() {
 	const dispatch = useDispatch();
-	const { darkTheme, imperialSystem } = useSelector(state => state.app);
+	const auth = getAuth(app);
+	const { darkTheme, imperialSystem, showSettings } = useSelector(
+		state => state.app
+	);
 
 	const handleMeasurementSystem = () => {
 		dispatch(
@@ -22,11 +32,25 @@ function Settings({ showSettings, setShowSettings }) {
 		dispatch(setMeasurementSystem());
 	};
 
+	const handleSignOut = async () => {
+		try {
+			await signOut(auth);
+
+			dispatch(resetAppState());
+			dispatch(resetUserState());
+		} catch (error) {
+			console.log(error.message);
+		}
+	};
+
 	return (
 		<div
 			className={`settings bg-secondary rgba ${showSettings ? 'active' : ''}`}
 		>
-			<FaTimes className="icon" onClick={() => setShowSettings(false)} />
+			<FaTimes
+				className="icon"
+				onClick={() => dispatch(setShowSettings(false))}
+			/>
 			<h2>Settings</h2>
 			<div className="settingsContainer">
 				<h3>Dark Mode</h3>
@@ -63,6 +87,14 @@ function Settings({ showSettings, setShowSettings }) {
 			</div>
 
 			<div className="settingsContainer"></div>
+			<button
+				onClick={e => {
+					e.preventDefault();
+					handleSignOut();
+				}}
+			>
+				Sign out
+			</button>
 		</div>
 	);
 }

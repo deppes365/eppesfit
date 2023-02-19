@@ -173,5 +173,33 @@
 		}
 	}
 
-    
+    .google {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		margin-top: 1rem;
+
+		.imgContainer {
+			max-width: 50px;
+			max-height: 50px;
+			border-radius: 50%;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+			margin-top: 0.5rem;	
+			background-color: $light-100A7;
+			cursor: pointer;
+			transition: 0.3s ease;
+
+			&:hover {
+				transform: scale(0.93);
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+
+			}
+		}
+	}
 }

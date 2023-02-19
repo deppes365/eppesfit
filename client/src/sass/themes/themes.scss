@@ -10,6 +10,10 @@
 		color: $dark-100;
 		transition: 0.3s ease;
 	}
+	
+	.text-color {
+		color: $dark-100;
+	}
 
 	.bg-primary {
 		background-color: $light-100;
@@ -49,6 +53,10 @@
 	p {
 		color: $light-100;
 		transition: 0.3s ease;
+	}
+
+	.text-color {
+		color: $light-100;
 	}
 
 	.bg-primary {

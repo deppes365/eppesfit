@@ -73,6 +73,10 @@ button {
 	&:hover {
 		transform: scale(0.9);
 	}
+
+	&.btn-red {
+		background-color: $errorRed;
+	}
 }
 
 @keyframes pageFadeIn {
